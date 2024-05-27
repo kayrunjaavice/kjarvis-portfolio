@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Contacts Page</title>
+    
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="plugins/flickity.css" media="screen">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+    
+
+</head>
+
+<body>
+<main>
+
+<!--NAVBAR-->
+<div class="navbar">
+    <a href="../index.html">HOME</a>
+    <!-- <a href="#projects">PROJECTS</a> -->
+    <div class="projects-dropdown">
+        <button class="dropbtn">PROJECTS
+        </button>
+        <div class="projects-content">
+            <a href="project1.html">Project 1</a>
+            <a href="project2.html">Project 2</a>
+            <a href="project3.html">Project 3</a>
+            <a href="project4.html">Project 4</a>
+            <a href="project5.html">Project 5</a>
+        </div>
+    </div>
+    <a href="../html/contact.html">CONTACT</a>
+    <a href="../html/gallery.html">IMAGE GALLERY</a>
+</div>
+
+<!--CONTENT-->
+<div class="content">
+    <h2> HOLONOMIC DRIVE PLATFORM FOR MOBILE ROBOTS</h2>
+    <hr>
+    <div class="content-img">
+        <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716816593/holonomic/naixtmtzipzmz9muc0lp.png" style="height:100%"alt="cnc1"></div>
+    </div>
+    
+    <div class="content-p">
+        <hr>
+        <br>
+        <h3>Introduction</h3>
+        <p>
+            The Goal of the holonomic drive project was to create a cost-effective approach to acheiving holonomic (omnidirectional)
+            motion on competition robots, more specifically, FRC robots, which weigh over 50kg and move around a basketball court-sized arena.
+        </p>
+        <p>
+            A typical differential-drive (also known as "skid steer") robot is restricted to moving forwards and backwards, as well as rotating.
+            In a competitive environment, holonomic drivetrains have the advantage, as they are able to maneuver around the field more easily. The
+            method for acheiving this is using four independant mechanum wheels, which use rollers at a 45 degree angle to create an off-axis force vector.
+            The disadvantage of this approach is the reduction in traction, resulting in lower acceleration and being pushed around by a robot from the opposing team.
+        </p>
+        <p>
+            These problems can be solved in a number of ways, two of which are explored in this project.
+        </p>
+        <br>
+        <hr>
+        <br>
+        <h3>Initial Design</h3>
+        <p>
+            The project was first conceived in 2020 with this design of a "swerve drive" (picture a castor wheel that is powered on both axes).
+            Swerve drives offer far greater speed and traction over mechanum designs due to not relying on slippage to create sideways forces, at the cost
+            of greater complexity.
+        </p>
+        <div class="sidebyside">
+            <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716816595/holonomic/fy56hbmazc73yfkrnsar.png" style="height:400px;"alt="initial design">
+            <p style="max-width:500px;">
+                Seen in the figure is one of four swerve modules that would be mounted on each corner of a platform. The 775 DC motor on the right is used
+                to steer the wheel assembly through a belt reduction and an absolute encoder, whilst the brushless NEO motor (top of main assembly) transmits
+                drive power to the wheel through a series of gears and a shaft that is coaxial to the axis of rotation. The coaxial design
+                eliminates the need of a slip ring, since both motors can be stationary.
+            </p>
+        </div>
+        <p>
+            Unfortunately, this iteration never came to fruition due to cost and time limitations.
+        </p>
+        <br>
+        <hr>
+        <br>
+        <h3>Revisited design</h3>
+        <p>
+            Towards the end of 2022, I revisited the project, this time with a friend who shared similar ambitions.
+            We decided to completely rethink the design from the ground up- Instead of creating the entire drive platform, which
+            would have an unknown reliability during competition, We would devise a single module that attaches to a proven skid-steer 
+            drivebase.
+        </p>
+        <div class="sidebyside">
+            <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716816591/holonomic/ovhunrs3j4j6ncoapnij.jpg" style="width:400px;"alt="initial design">
+            <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716816591/holonomic/mn6obty7ryaqdfuauslb.jpg" style="width:400px;"alt="initial design">
+        </div>
+        <p>
+            The new design is a hybrid between common skid-steer and mechanum (sometimes seen at a larger scale on forklifts).
+            Two pneumatic cylinders deploy or retract two "omni" wheels, which are wheels with perpendicular rollers, allowing
+            them to slip given non-planar motion. In the retracted state, the the robot has the speed and traction of skid-steer. 
+            When extended, only the rear omni wheels and the foremost mechanum wheels contact the ground, behaving similar to a mechanum drivetrain.
+        </p>
+        <div class="sidebyside">
+            <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716816591/holonomic/mtdugiyffctbufvjwjt8.png" style="width:400px;"alt="initial design">
+            <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716816591/holonomic/vmhunfcurqbynl2x2dkx.png" style="width:400px;"alt="initial design">
+        </div>
+        <div class="sidebyside">
+            <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716816591/holonomic/azwuboia9jwzxwwqmmkx.jpg" style="width:400px;"alt="initial design">
+            <p style="max-width:500px;">
+                The design has similar complexities to the swerve module - in order to transmit power to the omni wheels, a sigle shaft serves as both a
+                dead axle for the pivot, and a live axle for power transmission.
+            </p>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <h3>Prototype</h3>
+        <p>
+            To verify the design works as expected, we created a simplified module that attaches to the previous year's
+            competition robot. The video speaks for itself:
+        </p>
+        <iframe width="1000" height="562" src="https://www.youtube.com/embed/Tr0w3ysbMxc?si=RNzHkFpoPGJPrdtG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <p>
+            This was as far as the project went- Due to an unexpected source of funds, we were able to purchase
+            Off-The-Shelf swerve modules, which by this time had become more accessible to medium-budget teams.
+        </p>
+        <p>
+            That being said, as competition robotics continues to become more prevalant in WA schools, we can expect
+            to see an adaptation of the project in the not-so-distant future.
+        </p>
+        <br>
+        <hr>
+        <br>
+        <br>
+        <br>
+        <br>
+    
+</div>
+</main>
+<!--FOOTER-->
+<footer>
+    <p> © 2024 Kieran Jarvis </p>
+    <br>
+    <p>
+        <a href="../index.html">HOME</a> &nbsp;
+        &nbsp; <a href="../index.html">PROJECTS</a> &nbsp;
+        &nbsp;<a href="../html/contact.html">CONTACT</a> &nbsp;
+        &nbsp; <a href="../html/gallery.html">IMAGES</a>
+    </p>
+</footer>
+
+
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+</body>
+
+
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Main Page</title>
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="plugins/flickity.css" media="screen">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+    
+
+</head>
+
+<body>
+
+<!--NAVBAR-->
+<div class="navbar">
+    <a class="active" href="index.html">HOME</a>
+    <!-- <a href="#projects">PROJECTS</a> -->
+    <div class="projects-dropdown">
+        <button class="dropbtn">PROJECTS
+        </button>
+        <div class="projects-content">
+            <a href="projects/project1.html">Project 1</a>
+            <a href="projects/project2.html">Project 2</a>
+            <a href="projects/project3.html">Project 3</a>
+            <a href="projects/project4.html">Project 4</a>
+            <a href="projects/project5.html">Project 5</a>
+        </div>
+    </div>
+    <a href="html/contact.html">CONTACT</a>
+    <a href="html/gallery.html">IMAGE GALLERY</a>
+</div>
+
+
+<!--TITLE SPLASH-->
+<div class="title-splash">
+    <h1>KIERAN JARVIS</h1>
+    <div class="blurb">
+        Mechatronics engineering student  
+    </div>
+</div>
+
+<!--CAROSEL-->
+<div class="main-gallery js-flickity"
+data-flickity-options='{
+    "contain": true
+    ,"autoPlay": true
+    ,"wrapAround": true
+    }'>
+
+    <div class="carousel-cell"><img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716816809/router/o27rgfgam64uweqnsiry.jpg" style="height:500px" alt="cnc1"></div>
+    <div class="carousel-cell"><img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716817327/quokka/xyvhpih7eah4fub8irsa.jpg" style="height:500px" alt="quokka1"></div>
+    <div class="carousel-cell"><img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716816848/quokka/rvc1nf5awn9jcoemlcja.png" style="height:500px" alt="quokka2"></div>
+    <div class="carousel-cell"><img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716816994/router/gzo0jlj75r5bppdtf4zy.png" style="height:500px" alt="cnc2"></div>
+    <div class="carousel-cell"><img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716816591/holonomic/azwuboia9jwzxwwqmmkx.jpg" style="height:500px" alt="holo1"></div>
+    <div class="carousel-cell"><img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716816809/router/zetmfiepzzx4qiweolzs.jpg" style="height:500px" alt="cnc3"></div>
+    <div class="carousel-cell"><img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716816808/router/wzm4ssbdm9kc3lgctuqz.jpg" style="height:500px" alt="cnc4"></div>
+    <div class="carousel-cell"><img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716816595/holonomic/fy56hbmazc73yfkrnsar.png" style="height:500px" alt="holo2"></div>
+
+    
+
+</div>
+
+<!-- PROJECT CARDS -->
+ 
+<div class="project-card">
+
+    <a class="project-card-box" href="projects/project1.html">
+        <h2>Holonomic Drive Platform</h2>
+        <div class="sidebyside">
+            <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716816593/holonomic/naixtmtzipzmz9muc0lp.png" alt="placeholder2">
+            <p style="width:00px;">
+                <ul>
+                    <li>Allows mobile robots to translate sideways<br> without compromising on speed and traction</li>
+                    <li>Can be attached to existing skid-steer <br> drivebases</li>
+                </ul>
+            </p>
+        </div>
+    </a>
+
+    <a class="project-card-box" href="projects/project3.html">
+        <h2>Quokkas Ri3D Robot</h2>
+        <div class="sidebyside">
+            <p style="width:00px">
+                <ul>
+                    <li>Designed and built in 3 days at the start of <br> the FRC 2024 Build season</li>
+                    <li>Served as inspiration for over 300 Teams; <br> CAD has over 1800 downloads</li>
+                    <li>Youtube videos have collectively reached over <br> 70 000 people </li>
+                </ul>
+            </p>
+            <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716816841/quokka/qyrhax5qsf2yrn6njy5u.png" alt="placeholder2">
+        </div>
+    </a>
+
+    <a class="project-card-box" href="projects/project2.html">
+        <h2>CNC Router</h2>
+        <div class="sidebyside">
+            <p>
+                <ul>
+                    <li>Designed from ground up to machine <br> Aluminium at over 100mm^3/min MRR</li>
+                    <li>Custom control PCB based on <br> FluidNC Firmware</li>
+                    <li>Used to make parts for personal <br> projects and Perth robotics teams</li>
+                </ul>
+            </p>
+            <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716816995/router/vtloifwuxnur0xiffvcn.png" alt="placeholder2">
+        </div>
+    </a>
+</div>
+
+<!--FOOTER-->
+<footer>
+    <p> © 2024 Kieran Jarvis </p>
+    <br>
+    <p>
+        <a href="index.html">HOME</a> &nbsp;
+        &nbsp; <a href="index.html">PROJECTS</a> &nbsp;
+        &nbsp;<a href="html/contact.html">CONTACT</a> &nbsp;
+        &nbsp; <a href="html/gallery.html">IMAGES</a>
+    </p>
+</footer>
+
+
+
+    
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+</body>
+</html>
