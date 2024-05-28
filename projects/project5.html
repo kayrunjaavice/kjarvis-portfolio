@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Contacts Page</title>
+    
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="plugins/flickity.css" media="screen">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+    
+
+</head>
+
+<body>
+<main>
+
+<!--NAVBAR-->
+<div class="navbar">
+    <a href="../index.html">HOME</a>
+    <!-- <a href="#projects">PROJECTS</a> -->
+    <div class="projects-dropdown">
+        <button class="dropbtn">PROJECTS
+        </button>
+        <div class="projects-content">
+            <a href="project1.html">Project 1</a>
+            <a href="project2.html">Project 2</a>
+            <a href="project3.html">Project 3</a>
+            <a href="project4.html">Project 4</a>
+            <a href="project5.html">Project 5</a>
+        </div>
+    </div>
+    <a href="../html/contact.html">CONTACT</a>
+    <a href="../html/gallery.html">IMAGE GALLERY</a>
+</div>
+
+<!--CONTENT-->
+
+<div class="content-p">
+    <br>
+   <h2>Concealed Desktop Storage Robot</h2>
+   <hr>
+   <iframe width="1000px" height="560px" src="https://www.youtube.com/embed/6Nu2fbNwNYs?si=hQ4Yowha0C5FOMIX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+   <hr>
+   <p>
+        For my final 12th grade engineering project, I set out to build a small-scale functional model of an Automated Storage and Retrieval System (ASRS)
+    like the robots seen in Amazon's fulfillment center. The idea was as follows:
+    <ol>
+        <li>A self-contained unit that hangs below a desk, concealed from above. It is connected to a computer that can send it requests.</li>
+        <li>When a box is placed in the "mouth" of the robot, it automatically stores the box on a shelf and remembers it's location. </li>
+        <li>When the computer sends a request to retrieve said box, the robot nagivates to the indexed location and delivers it back to the mouth.</li>
+    </ol>
+    <hr>
+    <h3>The Design</h3>
+    <div class="sidebyside">
+        <img src="https://www.giken.com/en/wp-content/uploads/EP_slider-3.jpg" style="height:350px;">
+        <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716905489/yr12proj/xnmggza9rzeib2kyttxa.png" style="height:350px;">
+        <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716905489/yr12proj/jswdveferkdzgi7bjpvg.png" style="height:300px;">
+   </div>
+    <p>Inspired by those automatic parking towers in Japan, The "carriage" is able to rotate around it's central axis to access the radial shelves. It can also move
+        up and down between the top, or "mouth" and different shelf levels. Both axes use open-loop stepper motors with GT2 timing belt, with the vertical axis on an open-ended setup to save space. A large diameter
+    "lazy susan" bearing allows the carriage and payload to pass up through the mouth to the surface above (note: originally, the rotary axis was driven with a gear, but this did not acheive a large enough reduction).</p>
+    <div class="sidebyside">
+        <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716905490/yr12proj/mvdi5yklaoh7e7dhb0tc.jpg" style="height:350px;">
+        <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716905490/yr12proj/sseqcljxqoyhgm0n4vaj.png" style="height:350px;">
+        <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716905493/yr12proj/bul6kgstm1gdyzelq0ma.jpg" style="height:350px;">
+   </div>
+    <br>
+    <div class="sidebyside">
+        <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716905507/yr12proj/s3tgtu3jvjrvdowsklvb.jpg" style="height:350px;">
+        <p>
+            To be able to place and retreive boxes on the shelves,<br> a servo-drivenparallel four bar linkage keeps the<br>  payload level throughout the arc. On the end-effector,<br>
+            graphite-lubricated brass spikes interface with two holes <br>
+            on the standard 3d printed containers.</p>
+    </div>
+    <br>
+    <hr>
+    <h3> Control System</h3>
+    <p>A custom control PCB houses an arduino nano and a DRV8825 stepper driver, with an additional TB6600 driver connected externally. The arduino communicates to the computer over Serial over USB.</p>
+    <div class="sidebyside">
+        <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716905489/yr12proj/mbm5sguf6rocpyll7ppw.png" style="height:200px;">
+        <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716905501/yr12proj/diq76fnubp2cp0pybir3.jpg" style="height:350px;">
+   </div>
+    <p>
+        When the machine is powered on, It initiates a homing sequence to place the carriage in a known position (seen at the start of the video). When a command to store or retrieve a box is recieved, the arduino figures out the coordinates
+        it must navigate through through a lookup table of storage locations. Once the coordinates are aquired, a custom motion profiling layer moves the carriage to the position with smooth acceleration to prevent jerk.
+    </p>
+    <p>
+        Due to the arc of the parallel linkage, the vertical axis and linkage servo must move in sequence using simplified inverse kinematics to prevent collisions.
+    </p>
+    <hr>
+    <h3>More Images</h3>
+    <div class="gallery">
+        <div class="gallerybox">
+            <div class="column">
+                <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716905494/yr12proj/fx01zuek2w2jw9brutxy.jpg" style="width:100%">
+                <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716905491/yr12proj/ib3bruu0gecjz6cgbzny.jpg" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716905492/yr12proj/tgfjqjp4q8dxvwazsdsu.png" style="width:100%">
+                <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716905493/yr12proj/pjqfvsfefjwzipetpx5r.png" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716905492/yr12proj/hioybvtztiyoa7vocqpp.png" style="width:100%">
+                <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716905505/yr12proj/ebeofvaauem94fssqdqv.jpg" style="width:100%">
+                
+            </div>
+    
+        </div>
+    </div>
+
+
+
+</div>
+</main>
+<!--FOOTER-->
+<footer>
+    <p> © 2024 Kieran Jarvis </p>
+    <br>
+    <p>
+        <a href="../index.html">HOME</a> &nbsp;
+        &nbsp; <a href="../index.html">PROJECTS</a> &nbsp;
+        &nbsp;<a href="../html/contact.html">CONTACT</a> &nbsp;
+        &nbsp; <a href="../html/gallery.html">IMAGES</a>
+    </p>
+</footer>
+
+
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+</body>
+
+
+
+</html>
