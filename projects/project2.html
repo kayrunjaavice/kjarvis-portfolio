@@ -38,14 +38,84 @@
 
 <!--CONTENT-->
 
-<div class="content">
-    <br>
-    <br>
-    <p style="margin:40px;">Due to complexity, This project was documented in a google document, which has been embedded for viewing here. If this fails to load in your browser, You can view the document:</p>
-    <a href="https://docs.google.com/document/d/e/2PACX-1vRvYMsuwfOiN7RmpWN2L0cvKhZFn9wHWp_-NWDcOeJGZ4_jmx8uSNLrugOxywSqdz8M5HyloREM1CMn/pub" target="_blank" ><p style="margin:40px;color: blue ;text-decoration: underline;">here</p></a>
-    <br>
-    <iframe src="https://docs.google.com/document/d/e/2PACX-1vRvYMsuwfOiN7RmpWN2L0cvKhZFn9wHWp_-NWDcOeJGZ4_jmx8uSNLrugOxywSqdz8M5HyloREM1CMn/pub?embedded=true" width="80%" height="1000px">
-    </iframe>
+<div class="content-p">
+    <h2> CNC ROUTER</h2>
+    <hr>
+    <p>The goal of this project was to design and build a CNC router for the purpose of manufacturing parts
+        for underprivelidged West Australian Highschool robotics teams (learn more about that <a href="../html/frc.html" style="color:blue;text-decoration: underline;">Here</a>) who
+    do not have access to a CNC router.</p>
+    <hr>
+    <h3> Specification</h3>
+    <p>
+       With these goals in mind, here is an abbreviated list of criteria for the project to fulfill:
+       <ul>
+        <li>Budget of ~$1000</li>
+        <li>Capable of machining 6061 aluminium at a material-removal rate of 100mm^3/s (A typical low-cost router does half that and with worse quality)</li>
+        <li>Accurate to within +/- 0.2..</li>
+        <li>Work profile of 400x800x100 to accomodate most FRC parts</li>
+        <li>Fits on a desktop and in the back of a Ute</li>
+        <li>Automatic homing and computer spindle control</li>
+        <li>Homing accuracy of +/- 0.2mm</li>
+        <li>Interlocked polycarbonate enclosure</li>
+        <li>Electrical cabinet is not a fire hazard</li>
+       </ul>
+       For a more in-depth look at the pre-design stage, check out the <a href="https://docs.google.com/document/d/e/2PACX-1vRvYMsuwfOiN7RmpWN2L0cvKhZFn9wHWp_-NWDcOeJGZ4_jmx8uSNLrugOxywSqdz8M5HyloREM1CMn/pub" style="color:blue;text-decoration: underline;">Google Document</a>
+       for this project.
+    </p>
+    <hr>
+    <h3>Mechanical Design</h3>
+    <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716816995/router/vtloifwuxnur0xiffvcn.png" style="width:100%">
+    <div class="sidebyside">
+        <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716816807/router/pi98qqpp7rnkzdsbnils.jpg" style="width:40%">
+    <p> The machine was built around a large HDPE billet<br> from a surplus plastics store. A local machine <br> shop kindly
+        let us use their large wood router  <br>and drill press to manufacture this part. On top of<br> this sat cheap SBR20 linear rails, on which the <br> gantry is able to move along the Y axis.<br><br>
+        The gantry itself was constructed out of 25x150mm <br>aluminium flats, with numerous holes drilled along <br>the surface for components to mount to.
+        The<br> zigzag blind hole pattern on the butt ends of the <br>flats required some jigs, a hydralic jack trolley <br> and some prayers to get right.
+    </p>
+    </div>
+    <div class="sidebyside">
+        <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716816994/router/gzo0jlj75r5bppdtf4zy.png" style="height:350px">
+        <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716816808/router/nvfvbskifh8swshwsjai.jpg" style="height:400px">
+    </div>
+    <hr>
+    <h3> Electrical Cabinet</h3>
+    <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716816808/router/wzm4ssbdm9kc3lgctuqz.jpg" style="width:100%">
+    <p>
+        An old modified eATX desktop case is used to house the electronics, including:
+        <ul>
+            <li>Master isolator switch and 10A RCBO on input</li>
+            <li>24V 360W PSU for DRIVE motors</li>
+            <li>240V contactor used to cut DRIVE power when E-STOP is pressed</li>
+            <li>TB-6600 Stepper drivers for NEMA-23 motors</li>
+            <li>12V PSU for main control board</li>
+            <li>Custom ESP32-based controller PCB (see below)</li>
+            <li>240V 1.5kw 3-phase VFD for main spindle motor</li>
+            <li>E-STOP and other control buttons and indicators</li>
+            <li> DIN rails to mount standard components on</li>
+        </ul>
+
+        As Mentioned, a custom PCB with an embedded ESP32 is used as the router's brain. It runs a version of
+        <a href="https://github.com/bdring/FluidNC" style="color:blue;text-decoration: underline;">FluidNC</a> that was modified to
+        match the hardware setup. The ESP32 is able to connect to a network with a browser-based web UI, meaning
+        any computer can be used to wirelessly send G-Code to the machine.
+    </p>
+    <hr>
+    <h3> Project Outcome</h3>
+    <p>
+        So far, we have been able to acheive an MRR of 200mm^2/s, <b>double</b> our specified goal!
+        The most time consuming part of the operation is fixing a workpiece and tool changing (perhaps an ATC is on the horizon).
+        We have also surpassed our desired tolerance goal, hitting +/-0.1mm after the lead screws have been adjusted.
+    </p>
+    <p>
+        Overall, the project was a major success. Following completion in February of 2024, The router has already spent hundreds of
+        hours producing parts for several robotics teams around WA, with many more to come. The lessons learnt designing, manufacturing
+        and operation the machine will be invaluable to My future endeavors.
+    </p>
+    <p> If you would like more information, I have
+        created a google document detailing the entire design, manufacturing and evaluation process, linked <a href="https://docs.google.com/document/d/e/2PACX-1vRvYMsuwfOiN7RmpWN2L0cvKhZFn9wHWp_-NWDcOeJGZ4_jmx8uSNLrugOxywSqdz8M5HyloREM1CMn/pub" style="color:blue;text-decoration: underline;">Here</a>.
+    </p>
+
+    
 </div>
 </main>
 <!--FOOTER-->
