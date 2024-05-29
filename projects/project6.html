@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Contacts Page</title>
+    
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="plugins/flickity.css" media="screen">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+    
+
+</head>
+
+<body>
+<main>
+
+<!--NAVBAR-->
+<div class="navbar">
+    <a href="../index.html">HOME</a>
+    <!-- <a href="#projects">PROJECTS</a> -->
+    <div class="projects-dropdown">
+        <button class="dropbtn">PROJECTS
+        </button>
+        <div class="projects-content">
+            <a href="project1.html">Holonomic Drive</a>
+            <a href="project2.html">CNC Router</a>
+            <a href="project3.html">Quokkas Ri3D</a>
+            <a href="project4.html">MIDI Breath Control</a>
+            <a href="project5.html">Concealed ASRS</a>
+            <a href="project6.html">My PCBs</a>
+            <a href="project7.html">8-bit Redstone Computer</a>
+        </div>
+    </div>
+    <a href="../html/contact.html">CONTACT</a>
+    <a href="../html/gallery.html">IMAGE GALLERY</a>
+</div>
+
+<!--CONTENT-->
+
+<div class="content-p">
+    <br>
+   <h2>My PCB Projects</h2>
+   <hr>
+   <p>This page features some of my smaller PCB projects, in order of how cool I think they are. </p>
+   <hr>
+   <h3>C.H.E.S.T.E.R (22/04/2022)</h3>
+   <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716970738/pcb/j50kkqsoulvejqpwpu2i.png" style="width:100%">
+   <p>CHESTER is an acronym... but I forgot what it stands for.</p>
+   <p>All-in-one control and drive PCB for small-to-medium robots. In theory it is the only thing needed in between the battery, actuators and radio.</p>
+   <ul>
+    <li>Espressif ESP32U module used as MCU and 2.4Ghz Reciever. A corresponding ESP32 transciever or another CHESTER board allows 2-way communication over ESP-NOW.</li>
+    <li>4 X 5A H bridge ICs drive up to four DC motors, or two bipolar stepper motors</li>
+    <li>LSM6DSR MEMS 6-Axis Gyro Accelerometer for velocity PID or dead-reckoning</li>
+    <li>Built-in battery protection and low-voltage sleep function</li>
+   </ul>
+   <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716971957/pcb/fws8ysiupweea2ek2ig1.png" style="width:100%">
+   <hr>
+   <h3>Wearable Project - Evaluation Board (26/11/2023)</h3>
+   <div class="sidebyside">
+    <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716970666/pcb/mexdmpzhhxaq2nfm7vsa.jpg" style="width:80%;">
+</div>
+   <p>Part of an ongoing project to try and develop wearbles, such as a wristwatch, or even a smart ring.</p>
+   <ul>
+        <li>UBLOX ANNA-B112 is an extremely low-power and TINY SOM, based on Nordic's NRF52. It is capable of Bluetooth-Low-energy (BLE) for communication with nearby smartphones. </li>
+        <li>It is a challenge to drive small vibration motors using even smaller batteries. I used a 3.7V-to-5V boost regulator
+            slowly fill a CPH3225A 0.01F micro-supercapacitor with enough charge to run the vibration motor for ~5s at a time, at a greater current than the battery is able to provide.
+        </li>
+        <li>On board LiPo charge protection using BQ298</li>
+        <li>In-PCB capacitive touch array based on Cypress CMBR3108 Interface IC</li>
+        <li>ARGB LED array as low-res, extremely-high brightness display</li>
+   </ul>
+   <div class="sidebyside">
+    <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716971139/pcb/tqt7ewu2ovcqgkxbtsyu.png" style="width:40%;">
+    <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716971140/pcb/hhw6dwnsstfaqt1vmeer.png" style="width:40%;">
+    <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716971139/pcb/fmackvs10kohn3vzwy42.png" style="width:80%;">
+    <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716971139/pcb/nfuu5swdifvj878m9gv8.png" style="width:40%;">
+    <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716971139/pcb/gsghiarh12to0j02jqfn.png" style="width:40%;">
+</div>
+<hr>
+<h3>SLA Battery Tester - "qCard" (02/02/2023)</h3>
+   <div class="sidebyside">
+        <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716970707/pcb/vfyumihxgod0y56awo0a.jpg" style="width:40%;">
+        <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716970721/pcb/uw7y5tlw0nkylmk3rrjd.jpg" style="width:40%;">
+   </div>
+   <p>Designed to be an extremely cost-effective and easy-to-manufacture battery tester for 12V sealed lead acid batteries, which are standard on FRC robots.
+    My team struggled with organizing charged and uncharged batteries, and we have accidentally installed dead batteries more than once. The idea is every team member
+    could have this item on their keychain so that anyone can identify charged batteries.
+    <ul>
+        <li>SB50 Andersons connectors are standard on FRC batteries. The qCard uses the PCB to directly slide into the connector.</li>
+        <li>Can be plugged into the connector either by using a mirrored footprint on the PCB's rear</li>
+        <li>PCB is designed to not require an enclosure to be robust - Low profile SMDs only, outer edge has grippy contour, keychain hole on top.</li>
+        <li>ATTINY-1616 MCU can be programmed and tested using alligator clips on the rear test pads- alternatively, a bed-of-nails can be configured to interface.</li>
+    </ul>
+   </p>
+    <div class="sidebyside">
+        <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716971140/pcb/ec7rsuyshter7wu76tbb.png" style="width:40%;">
+        <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716971140/pcb/woh6w4efvmum70twobpl.png" style="width:40%;">
+        <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716971139/pcb/ddo6fnkebepqftszbsxw.png" style="width:70%;">
+    </div>
+   <hr>
+   <h3>Sensed 3-Phase Brushless Motor Controller (04/11/2022)</h3>
+   <div class="sidebyside">
+    <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716970677/pcb/wthhapftiepk1xu4oydu.jpg" style="width:70%;">
+</div>
+   <p>Controls a 3-phase sensed BLDC motor at 12V and up to 40A Continuous. This was a stepping stone to a custom motor controller for <a href="../html/frc.html" style="color:blue;text-decoration: underline;">FRC</a> and Combat Robotics, which, as of 2024, is yet to be made.</p>
+   <ul>
+    <li>Based on Infineon IRF7840 power MOSFETS with LM5109 gate drivers</li>
+    <li>Sense resistor for overcurrent protection or current-regulated chopping</li>
+    <li>Original design had an STM32F0 MCU on the PCB. To reduce bring-up costs and difficulty, this was removed, in favor of an external, validated MCU.</li>
+   </ul>
+   <img src="https://res.cloudinary.com/duqi6hkh0/image/upload/v1716971957/pcb/ts4jbcsuxuv2bk75t0cd.png" style="width:100%">
+   
+   <hr> 
+   <br>
+   
+   
+
+
+</div>
+</main>
+<!--FOOTER-->
+<footer>
+    <p> © 2024 Kieran Jarvis </p>
+    <br>
+    <p>
+        <a href="../index.html">HOME</a> &nbsp;
+        &nbsp;<a href="../html/contact.html">CONTACT</a> &nbsp;
+        &nbsp; <a href="../html/gallery.html">IMAGES</a>&nbsp;
+        &nbsp; <a href="../html/frc.html">FRC</a>
+    </p>
+</footer>
+
+
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+</body>
+
+
+
+</html>
